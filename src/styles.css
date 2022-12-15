@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  border: 3px solid red;
+  font-family: "Avenir";
+}
+
+/* 1. Is there a way to do the vertical centering and height for main without specifying height? */
+header {
+  text-align: left;
+  padding: 15px 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  border: 3px solid blue;
+}
+
+.leftside {
+  border: 3px solid orange;
+  max-height: calc(100vh - 86px);
+  display: grid;
+  grid-template-rows: 30vh 1fr;
+}
+
+.leftTop {
+  border: 3px solid pink;
+}
+
+/* 2. Vertical scroll doesn't appear - just extends past parent height */
+.leftBottom {
+  border: 3px solid yellow;
+  background-color: #fafafa;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* 3. Why do these boxes leave extra room to the right - it's the scrollbar. It's ugly. */
+.leftBottomTile {
+  border: 2px solid navy;
+  min-height: 200px;
+  width: inherit;
+  margin: 10px;
+}
+
+.rightside {
+  border: 3px solid green;
+  display: grid;
+  grid-template-rows: 40vh 1fr;
+  max-height: calc(100vh - 86px);
+}
+
+.rightTop {
+  border: 3px solid saddlebrown;
+}
+
+/* 4. Horizontal scroll doesn't appear */
+.rightBottom {
+  border: 3px solid aqua;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+/* 5. Width doesn't make a difference over certain number */
+/* 6. Extra space on the bottom - it's the scrollbar. It's ugly. */
+.rightBottomTile {
+  border: 2px solid navy;
+  height: inherit;
+  min-width: 150px;
+  margin: 10px;
+}
